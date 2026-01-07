@@ -1,0 +1,252 @@
+/* Colors & Theme Variables */
+:root {
+    --primary-cyan: #8ff;
+    --bg-dark: #000000;
+    --panel-bg: rgba(15, 23, 42, 0.9);
+    --glass-border: rgba(127, 255, 255, 0.25);
+    --nw-red: #EF3022;
+    --nw-orange: #FDCA35;
+    --nw-green: #3A9F48;
+}
+
+/* Reset & Base */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+}
+
+body { 
+    background: var(--bg-dark); 
+    color: #ffffff; 
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+/* Header & Navigation */
+.header {
+    height: 80px; 
+    background: rgba(0, 0, 0, 0.95);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 30px; 
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000; 
+    position: relative;
+}
+
+#menu { 
+    display: flex; 
+    gap: 10px; 
+}
+
+.view-btn {
+    background: transparent; 
+    border: 1px solid var(--primary-cyan);
+    color: var(--primary-cyan); 
+    padding: 8px 20px; 
+    cursor: pointer;
+    font-weight: bold; 
+    border-radius: 4px;
+}
+
+.view-btn.active { 
+    background: var(--primary-cyan) !important; 
+    color: #000 !important; 
+    box-shadow: 0 0 15px var(--primary-cyan); 
+}
+
+/* User Profile */
+.user-profile { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+#userAvatar { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    border: 2px solid var(--primary-cyan); 
+}
+
+#userName {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--primary-cyan);
+    text-align: center;
+}
+
+.logout-btn { 
+    background: #ef4444; 
+    color: white; 
+    border: none; 
+    padding: 6px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+/* Main Layout */
+.main-layout { 
+    display: flex; 
+    height: calc(100vh - 80px); 
+}
+
+#visualization { 
+    flex: 1; 
+    position: relative; 
+}
+
+/* Tile Elements */
+.element {
+    width: 160px; 
+    height: 200px;
+    display: flex; 
+    flex-direction: column;
+    padding: 12px; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+.element:hover {
+    transform: scale(1.1);
+    z-index: 1000 !important;
+    box-shadow: 0 0 30px rgba(136, 255, 255, 0.3);
+}
+
+.tile-header { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 10px; 
+    font-weight: 800; 
+    margin-bottom: 10px; 
+    opacity: 0.9; 
+}
+
+.country-label, 
+.age-label { 
+    color: #fff; 
+}
+
+.photo-wrap { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.tile-img { 
+    width: 75px; 
+    height: 75px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.name-label { 
+    font-size: 13px; 
+    font-weight: bold; 
+    text-align: center; 
+    margin: 8px 0 2px 0; 
+    letter-spacing: 0.5px; 
+}
+
+.interest-label { 
+    font-size: 10px; 
+    text-align: center; 
+    opacity: 0.7; 
+    font-style: italic; 
+}
+
+/* Indicator Panel */
+.indicator-wrapper {
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px;
+    z-index: 1000; 
+    background: rgba(0, 0, 0, 0.8);
+    padding: 12px 18px; 
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    width: 220px;
+}
+
+.label-row { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 6px; 
+}
+
+.color-bar {
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(to right, var(--nw-red), var(--nw-orange), var(--nw-green));
+}
+
+.color-box { 
+    display: none; 
+}
+
+.label { 
+    font-size: 10px; 
+    font-weight: bold; 
+    color: #94a3b8; 
+}
+
+/* Side Panel */
+.info-panel { 
+    width: 350px; 
+    background: var(--panel-bg); 
+    border-left: 1px solid var(--glass-border); 
+    padding: 30px; 
+}
+
+.panel-header { 
+    border-bottom: 1px solid var(--glass-border); 
+    padding-bottom: 15px; 
+    margin-bottom: 20px; 
+}
+
+.placeholder-text { 
+    color: #64748b; 
+    text-align: center; 
+    margin-top: 50px; 
+}
+
+/* Loading States */
+.loading { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+}
+
+.spinner { 
+    width: 40px; 
+    height: 40px; 
+    border: 4px solid rgba(136, 255, 255, 0.2); 
+    border-top-color: var(--primary-cyan); 
+    border-radius: 50%; 
+    animation: spin 1s linear infinite; 
+    margin: 0 auto 10px; 
+}
+
+@keyframes spin { 
+    to { 
+        transform: rotate(360deg); 
+    } 
+}

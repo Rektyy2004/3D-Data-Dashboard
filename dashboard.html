@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>📊 DataVis 3D</h1>
+            <span>Interactive Data Visualization</span>
+        </div>
+        
+        <div id="menu">
+            <button id="table" class="view-btn active">TABLE</button>
+            <button id="sphere" class="view-btn">SPHERE</button>
+            <button id="helix" class="view-btn">HELIX</button>
+            <button id="grid" class="view-btn">GRID</button>
+        </div>
+
+        <div class="user-profile">
+            <div class="user-details">
+                <img id="userAvatar" src="https://ui-avatars.com/api/?name=Guest" alt="User Profile">
+                <span id="userName">Guest</span>
+            </div>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <div id="visualization">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Syncing 3D Data...</p>
+            </div>
+        </div>
+        
+        <aside class="info-panel">
+            <div class="panel-header">
+                <h3>User Profile Details</h3>
+                <p>Click a 3D tile to view info</p>
+            </div>
+            <div id="infoPanel" class="panel-content">
+                <div class="placeholder-text">No user selected</div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="indicator-wrapper">
+        <div class="label-row">
+            <span class="label">LOW</span>
+            <span class="label">HIGH</span>
+        </div>
+        <div id="netWorthBar" class="color-bar"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.6.4/dist/tween.umd.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

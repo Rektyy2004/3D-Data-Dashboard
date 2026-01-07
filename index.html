@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 DataVis 3D</title>
+    
+    <link rel="stylesheet" href="index.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="glass-container">
+        <main class="login-card">
+            <header class="brand">
+                <div class="icon-box">📊</div>
+                <h1>DataVis 3D</h1>
+                <p>Interactive Data Visualization Dashboard</p>
+            </header>
+
+            <section class="auth-section">
+                <div id="loggedOutView" class="view-state">
+                    <h2>Welcome Back</h2>
+                    <p class="description">Sign in to sync with your Google Sheet and explore data in 3D environments.</p>
+                    
+                    <div id="googleSignInBtn" class="g-btn-wrapper"></div>
+                </div>
+
+                <div id="loggedInView" class="view-state hidden">
+                    <div class="profile-card">
+                        <div class="avatar-wrapper">
+                            <img id="userPicture" src="" alt="Profile">
+                        </div>
+                        <h3 id="userName">User Name</h3>
+                        <p id="userEmail">user@email.com</p>
+                    </div>
+
+                    <div class="action-group">
+                        <button id="dashboardBtn" class="btn btn-primary">
+                            <span>🚀 Open 3D Dashboard</span>
+                        </button>
+                        <button id="signOutBtn" class="btn btn-outline">
+                            Sign Out
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="login-footer">
+                <div class="lang-selector">
+                    <label for="languageSelect">Language:</label>
+                    <select id="languageSelect">
+                        <option value="en">English (US)</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+                <p class="legal">By signing in, you agree to our <a href="#">Terms</a> & <a href="#">Privacy</a>.</p>
+            </footer>
+        </main>
+    </div>
+
+    <div id="notification-container"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
